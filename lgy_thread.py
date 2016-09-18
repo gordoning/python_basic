@@ -16,6 +16,7 @@ if __name__ == '__main__':
         t.start()
 
     for t in thread_list:
+        print "开始了"
         t.join()
 
     end = time.clock()

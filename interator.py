@@ -86,10 +86,10 @@ def produce(c):
         print '确认还剩：%d'%n
     c.close()
 
-consumer()
-consumer()
-# c = consumer()
-# produce(c)
+# consumer()
+# consumer()
+c = consumer()
+produce(c)
 
 # for i in fab(10000):
 #     print i

@@ -6,6 +6,9 @@
 #人类
 class Person(object):
 
+    def __init__(self):
+        self.__abc__ = "good"
+
     #交流的方法
     def communicate(self):
         print '我们是伟大的人类，可以交流信息'
@@ -31,6 +34,7 @@ if __name__ == '__main__':
     #调用统一的方法：talking
     talking(one_person)
     talking(one_mokey)
+    print one_person.__dict__
 
 
 
