@@ -100,7 +100,7 @@ with open('guoyang.txt','r+') as twofile:
 # 捕获异常的好处是什么？
 # 答：不影响后边程序的顺利执行
 try:
-    print(int('sss'))
+    print(int(4.4))
 except ValueError as e:
     print('捕获到以下的异常:',e)
 else:
@@ -112,5 +112,8 @@ print("程序到此结束")
 
 
 # 如何触发一个异常
-
 # raise ValueError
+
+# 如何用一句代码，来表示判断语句的逻辑处理？
+a = 3 if False else 1
+# print(a)
