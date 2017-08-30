@@ -1,6 +1,6 @@
 #coding:utf-8
 """
-python的基础知识
+python的基础知识_01
 列表 元组 集合等
 """
 
@@ -11,8 +11,13 @@ str = "{0},is a good {1}".format("linguoyang","man")
 # 元组如果只有1个元素，如何表达？
 tuple2 = (1,)
 
+
 #如何声明一个数组
 list1 = list()
+
+# 如何判断一个序列是空的
+if not list1:
+    print("列表是空的")
 
 # 如何声明一个元组
 tuple1 = tuple()
@@ -31,13 +36,12 @@ list2 = [i for i in str]
 
 # 如何声明一个集合
 set1 = set()
-set2 = {'l','h','c'}
 
 # 如何添加元素到一个集合？2种方式？
 set1.add('lgy')
 set1.update('china')
 
-# 如何从一个集合种，删除一个元素？
+# 如何从一个集合中，删除一个元素？
 set1.remove('c')
 
 # 如何判断一个元素，是否在集合中？
