@@ -68,8 +68,9 @@ else:
 str1 = "lin guoyang"
 str2 = str1.split(' ')
 str3 = re.split(r'\s+',str1)
+str4 = str1.replace(' ','')
 
-print(str3)
+print(str4)
 
 # 如何过滤掉或替换掉用户输入的不规范的字符，比如；，！？等
 str1 = 'lin,  -guoy!ang'
