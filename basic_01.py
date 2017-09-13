@@ -3,6 +3,7 @@
 python的基础知识_01
 列表 元组 集合等
 """
+from functools import reduce
 
 
 # 如何把字符串，组合成一句自定义的话？
@@ -15,6 +16,7 @@ tuple2 = (1,)
 #如何声明一个数组
 list1 = list()
 
+list1 = [i*2 for i in range(1,10)]
 # 如何判断一个序列是空的
 if not list1:
     print("列表是空的")
@@ -29,7 +31,7 @@ dict1['name'] = 'linguoyang'
 dict1['age'] = 12
 
 # 列表的相加
-list1 = list1 + ["linguoyang","zhangsan","李光辉","李蛋蛋"]
+# list1 = list1 + ["linguoyang","zhangsan","李光辉","李蛋蛋"]
 
 # 如何将一个字符串的字符全部提取出来？
 list2 = [i for i in str]
@@ -48,9 +50,9 @@ set1.remove('c')
 tt = 'a' in set1
 
 # 如何计算两个集合的交集，并集，差集
-sset1 = set1&set2
-sset2 = set1|set2
-sset3 = set1-set2
+# sset1 = set1&set2
+# sset2 = set1|set2
+# sset3 = set1-set2
 
 # 如何让列表的元素进行倒序,倒数后3个？考虑下步长
 list3=list1[-1:-4:-1]
@@ -121,3 +123,10 @@ print("程序到此结束")
 # 如何用一句代码，来表示判断语句的逻辑处理？
 a = 3 if False else 1
 # print(a)
+
+def max(x,y):
+    return y if x<y else x
+
+list2 = reduce(max, list1)
+
+print(list2)
