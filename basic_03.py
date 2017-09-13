@@ -4,6 +4,8 @@
 鸭子类型
 """
 
+import time
+
 class Hero():
     '''
     这是一个超级英雄
@@ -32,4 +34,10 @@ if __name__ == '__main__':
     # 如何查看一个类的所有属性和方法
     print(dir(Hero))
 
+    # 如何打印一个类实例的所有方法
+    print(Hero.__dict__)
+
     lgy.run()
+
+    # 如何按照格式，打印日期的结果
+    print(time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime()))

@@ -3,9 +3,9 @@ import threading
 import time
 
 def hello():
-    print "lgy"
+    print("lgy")
     time.sleep(1)
-    print threading.current_thread().name
+    print(threading.current_thread().name)
 
 if __name__ == '__main__':
     start = time.clock()
@@ -16,9 +16,9 @@ if __name__ == '__main__':
         t.start()
 
     for t in thread_list:
-        print "开始了"
+        print("开始了")
         t.join()
 
     end = time.clock()
-    print threading.current_thread().name
-    print '花掉时间'+str(end-start)
+    print(threading.current_thread().name)
+    print('花掉时间'+str(end-start))

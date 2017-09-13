@@ -60,19 +60,19 @@ class lottery_Machine(object):
         for ball in self.red_ball_list:
             ball.run()
             count =count + 1
-            print '开了第%d个红球'%count
+            print('开了第%d个红球'%count)
             # print "开红球："+str(ball.number)+"   "
             self.red_ball_numbers.append(ball.number)
             time.sleep(0.3)
 
         #开奖：蓝色球
         self.blue_ball.run()
-        print '开了第1个蓝球'
+        print('开了第1个蓝球')
         # print "开蓝球：" + str(self.blue_ball.number)
         self.blue_ball_number = self.blue_ball.number
 
         #通知所有显示器，显示开奖结果
-        print "\n>>开奖结束,马上通知所有的显示器\n\n"
+        print("\n>>开奖结束,马上通知所有的显示器\n\n")
         time.sleep(1)
         self.notify_observers()
 
@@ -92,12 +92,12 @@ class lottery_Machine(object):
 
     @staticmethod
     def self_killing():
-        print 'i am over,88%s'%lottery_Machine.counts
+        print('i am over,88%s'%lottery_Machine.counts)
 
-    def __new__(cls, *args, **kwargs):
-        if not hasattr(cls,'_instance'):
-            cls._instance = super(lottery_Machine,cls).__new__(cls,*args,**kwargs)
-        return cls._instance
+    # def __new__(cls, *args, **kwargs):
+    #     if not hasattr(cls,'_instance'):
+    #         cls._instance = super(lottery_Machine,cls).__new__(cls,*args,**kwargs)
+    #     return cls._instance
 
 #LED看板，显示结果
 class LED_Display():
@@ -117,13 +117,12 @@ class LED_Display():
     #显示结果
     def displaying(self):
 
-        print '''！！！!!这是LED显示器：
-        '''
+        print('！！！!!这是LED显示器')
 
         for bull_number in self.red_ball_list:
-            print 'LED红:'+str(bull_number) + '  '
+            print('LED红:'+str(bull_number) + '  ')
 
-        print 'LED蓝:'+str(self.blue_ball)
+        print('LED蓝:'+str(self.blue_ball))
 
 
 #PC显示器上的看板
@@ -145,11 +144,11 @@ class PC_Display():
     #显示结果
     def displaying(self):
 
-        print '\n#####这是PC显示器：'
+        print('\n#####这是PC显示器：')
 
         for bull_number in self.red_ball_list:
-            print 'PC红:'+str(bull_number) + '  '
-        print 'PC蓝:'+str(self.blue_ball)
+            print('PC红:'+str(bull_number) + '  ')
+        print('PC蓝:'+str(self.blue_ball))
 
 if __name__ == '__main__':
     lottery_machine = lottery_Machine(red_Ball,blue_Ball)
