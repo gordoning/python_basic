@@ -73,14 +73,15 @@ str4 = str1.replace(' ','')
 print(str4)
 
 # 如何过滤掉或替换掉用户输入的不规范的字符，比如；，！？等
-str1 = 'lin,  -guoy!ang'
+str1 = 'lin,  -guoy!ang44'
 # str2 = re.split(r'[\s\,\!\;]+',str1)
 str3 = re.sub(r'[\s\,\!\;]+','',str1)
+str4 = str1.replace(' ','').replace('-','')
 
-print(str3)
+print(str4)
 
-# 如何对一个字符串的内容，进行[分组]的提取：
-str1 = 'linguoyang@gfgf.com'
+# 如何对一个字符串的内容，进行[分组]的提取：,比如提取出linguoyang@126.com当中的邮箱名linguoyang和邮箱地址126
+str1 = '!!!linguoyang2008@gfgf.com'
 obj = re.search(r'([a-z0-9]+)\@([a-z]+)\.([a-z]+)',str1)
 i = 0
 for i in range(0,4):
@@ -90,7 +91,10 @@ for i in range(0,4):
         print('\n')
         break
 
-# 如何找到一个字符串中的所有手机号
-str1 = "13616187656,还有一个手机号15623453345"
-obj_list = re.findall(r'[0-9-()（）]{7,18}',str1)
+# 如何找到一个字符串中的所有手机号,但是match和search只会找到符合条件的第1个
+str1 = "13616187656,还有一个手机号15623453345，还有123"
+obj_list = re.findall(r'[0-9]{7,19}',str1)
 print(obj_list)
+
+if 1&bool(2):
+    print("good")

@@ -1,6 +1,6 @@
 # coding:utf-8
 '''
-2016-06-02 林国洋
+订阅模式
 项目介绍：
 彩票开奖功能，点击开始，系统就会自动开奖
 开奖规则是这样的：6个红球和1个篮球（红球范围1-33；蓝球范围1-16）
@@ -87,8 +87,9 @@ class lottery_Machine(object):
     #通知显示器,兰球和红色球的结果
     def notify_observers(self):
         #开奖的结果，通知
+        dict_number = {'red_ball_numbers':self.red_ball_numbers,'blue_ball_number':self.blue_ball_number}
         for observer in self.observers:
-            observer.update(self.red_ball_numbers, self.blue_ball_number)
+            observer.update(dict_number)
 
     @staticmethod
     def self_killing():
@@ -109,9 +110,9 @@ class LED_Display():
 
     #获取开奖结果：6个红球，1个兰球
     #同时立马显示出来
-    def update(self,red_balls,blue_ball):
-        self.red_ball_list = red_balls
-        self.blue_ball = blue_ball
+    def update(self,dict_number):
+        self.red_ball_list = dict_number['red_ball_numbers']
+        self.blue_ball = dict_number['blue_ball_number']
         self.displaying()
 
     #显示结果
@@ -136,9 +137,9 @@ class PC_Display():
 
     #获取开奖结果：6个红球，1个兰球
     #同时立马显示出来
-    def update(self,red_balls,blue_ball):
-        self.red_ball_list = red_balls
-        self.blue_ball = blue_ball
+    def update(self,dict_number):
+        self.red_ball_list = dict_number['red_ball_numbers']
+        self.blue_ball = dict_number['blue_ball_number']
         self.displaying()
 
     #显示结果

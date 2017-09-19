@@ -34,7 +34,8 @@ dict1['age'] = 12
 # list1 = list1 + ["linguoyang","zhangsan","李光辉","李蛋蛋"]
 
 # 如何将一个字符串的字符全部提取出来？
-list2 = [i for i in str]
+list2 = [i for i in "china"]
+# print(list2)
 
 # 如何声明一个集合
 set1 = set()
@@ -94,25 +95,29 @@ def myprint2(**kwargs):
 1，打开文件；2，写入内容；3，关闭程序
 懂了吗？
 """
-onefile = open('guoyang.txt','w')
-onefile.write("通畅财务自由，从python开始")
+onefile = open('guoyang.txt','a')
+onefile.write("通畅财务自由，从python开始,林国洋明白吗？")
+# 如何防止写入文件的数据丢失了
+onefile.flush()
 onefile.close()
 
 # 如何用一句代码就完成文件操作的3大核心流程呢？
 with open('guoyang.txt','r+') as twofile:
     print(twofile.read())
 
+
+
 # 捕获异常的标准处理格式是怎样的？
 # 捕获异常的好处是什么？
-# 答：不影响后边程序的顺利执行
+# 答：不影响后边程序的顺利执行,不会导致程序无缘无故的奔溃
 try:
-    print(int(4.4))
+    print(int('lgy'))
 except ValueError as e:
     print('捕获到以下的异常:',e)
 else:
     print("没有任何异常")
-finally:
-    print("不管怎样，我都执行一下")
+# finally:
+#     print("不管怎样，我都执行一下")
 
 print("程序到此结束")
 
@@ -121,12 +126,15 @@ print("程序到此结束")
 # raise ValueError
 
 # 如何用一句代码，来表示判断语句的逻辑处理？
-a = 3 if False else 1
-# print(a)
-
 def max(x,y):
     return y if x<y else x
 
-list2 = reduce(max, list1)
+def add(x,y):
+    return x + y
 
-print(list2)
+list9 = [1,4,6,3,8,10,3,4,5,1]
+
+# 如何用一个函数，轮询一个列表，并找出我们最想要的元素
+reduct_result = reduce(add, list9)
+
+print(reduct_result)
