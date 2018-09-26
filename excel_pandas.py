@@ -34,7 +34,7 @@ def excelAddPhoneSn(df, phone):
     # 在一个excel中新增一个sheet
     excelAddSheet(df_moblie,excelWriter,sheet_name=str(phone))
 
-    print("存入成功")
+    print(str(phone)+"存入成功")
 
 
 if __name__ == '__main__':
@@ -49,10 +49,14 @@ if __name__ == '__main__':
     df = pd.DataFrame(pd.read_excel(excel_file_path))
 
     # 将一个手机号下的所有sn都存入新的sheet中
-    excelAddPhoneSn(df,13970004878)
+    # excelAddPhoneSn(df,15078337512)
 
+    # 此项目下的所有手机号码
+    phone_list = [13970004878,18679109736,18070139770,13767975985,13576261336,13667831668,15078337513]
 
-
+    # 将列表中所有手机号的统计结果，全部新增一个一个sheet，并入到同一个excel中
+    for phone in phone_list:
+        excelAddPhoneSn(df,phone)
 
     """其他一些常用的功能"""
 
